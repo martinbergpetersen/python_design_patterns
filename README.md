@@ -15,7 +15,7 @@ Short implementations of the GOF design patterns in python
 
 ### Abstract Factory Method
 
-#### Abstract factory pattern is a creational design pattern that let u create object of families related object without specifying the concrete implementation.
+#### Abstract factory pattern is a creational design pattern that lets you create object of families related object without specifying the concrete implementation.
 
 ##### When to use:
 
