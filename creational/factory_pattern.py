@@ -7,46 +7,34 @@ import abc
 class Transportation(object):
     __metaclass__ = abc.ABCMeta
 
-    @abc.abstractproperty
-    def name(self):
-        pass
-
     @abc.abstractmethod
     def get(self):
         pass
 
-    def print_(self):
-        print self.name
+    def create(self):
+        print self.get().name
 
 
 class Ship(Transportation):
     def __init__(self):
-        pass
+        self.name = "SHIP"
 
     def get(self):
         return Ship()
 
-    @property
-    def name(self):
-        return "SHIP"
-
 
 class Truck(Transportation):
     def __init__(self):
-        pass
+        self.name = "TRUCK"
 
     def get(self):
         return Truck()
-
-    @property
-    def name(self):
-        return "TRUCK"
 
 
 truck = Truck()
 ship = Ship()
 
-transportations = [truck, ship]
+transportation = [truck, ship]
 
-for transportation in transportations:
-    transportation.print_()
+for trans in transportation:
+    trans.create()

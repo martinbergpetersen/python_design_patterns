@@ -5,30 +5,26 @@
 import abc
 
 
-class Dialog(object):  # FACTORY
+class ComponentFactory(object):  # FACTORY
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
     def create_button(self):
         pass
 
-    def render(self):
-        button = self.create_button()
-        button.render()
 
-
-class IOSDialog(Dialog):
+class IOSFactory(ComponentFactory):
     def create_button(self):
         return IOSButton()
 
 
-class WinDialog(Dialog):
+class WINFactory(ComponentFactory):
 
     def create_button(self):
         return WinButton()
 
 
-class LinuxDialog(Dialog):
+class LinuxFactory(ComponentFactory):
 
     def create_button(self):
         return LinuxButton()
@@ -64,18 +60,21 @@ class Application(object):
     def __init__(self, factory):
         self.factory = factory
 
-    def render(self):
-        self.factory.render()
+    def button(self):
+        button = self.factory.create_button()
+        button.render()
 
 
-l_dialog = LinuxDialog()
-w_dialog = WinDialog()
-ios_dialog = IOSDialog()
+l_factory = LinuxFactory()
+w_factory = WINFactory()
+ios_factory = IOSFactory()
 
 
-l_app = Application(l_dialog)
-l_app.render()
-w_app = Application(w_dialog)
-w_app.render()
-ios_app = Application(ios_dialog)
-ios_app.render()
+l_app = Application(l_factory)
+l_app.button()
+
+w_app = Application(w_factory)
+w_app.button()
+
+ios_app = Application(ios_factory)
+ios_app.button()
