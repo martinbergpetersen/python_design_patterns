@@ -1,6 +1,3 @@
-# Factory pattern is a creational design patterns
-# that provides an interface for creating objects in a superclass,
-# but allows a subclass to alter the type of the created object.
 import abc
 
 
