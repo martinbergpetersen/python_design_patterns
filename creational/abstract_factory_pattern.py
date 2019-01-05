@@ -16,7 +16,7 @@ class ComponentFactory(object):  # FACTORY
         print "I am an universal table"
 
 
-class IOSFactory(ComponentFactory):
+class IOSComponentFactory(ComponentFactory):
     def create_button(self):
         return IOSButton()
 
@@ -24,7 +24,7 @@ class IOSFactory(ComponentFactory):
         return IOSCheckbox()
 
 
-class WINFactory(ComponentFactory):
+class WINComponentFactory(ComponentFactory):
 
     def create_button(self):
         return WinButton()
@@ -33,7 +33,7 @@ class WINFactory(ComponentFactory):
         return WinCheckbox()
 
 
-class LinuxFactory(ComponentFactory):
+class LinuxComponentFactory(ComponentFactory):
 
     def create_button(self):
         return LinuxButton()
@@ -111,9 +111,9 @@ class Application(object):
         self.factory.create_table()
 
 
-l_factory = LinuxFactory()
-w_factory = WINFactory()
-ios_factory = IOSFactory()
+l_factory = LinuxComponentFactory()
+w_factory = WINComponentFactory()
+ios_factory = IOSComponentFactory()
 
 
 l_app = Application(l_factory)
