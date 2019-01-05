@@ -95,7 +95,7 @@ class IOSButton(Button):
         print "I am a IOS button"
 
 
-class Application(object):
+class GUI(object):
     def __init__(self, factory):
         self.factory = factory
 
@@ -116,17 +116,17 @@ w_factory = WINComponentFactory()
 ios_factory = IOSComponentFactory()
 
 
-l_app = Application(l_factory)
+l_app = GUI(l_factory)
 l_app.button()
 l_app.checkbox()
 l_app.table()
 
-w_app = Application(w_factory)
+w_app = GUI(w_factory)
 w_app.button()
 w_app.checkbox()
 w_app.table()
 
-ios_app = Application(ios_factory)
+ios_app = GUI(ios_factory)
 ios_app.button()
 ios_app.checkbox()
 ios_app.table()
