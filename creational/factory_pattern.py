@@ -8,9 +8,6 @@ class Transportation(object):
     def get(self):
         pass
 
-    def create(self):
-        print self.get().name
-
 
 class Ship(Transportation):
     def __init__(self):
@@ -34,4 +31,4 @@ ship = Ship()
 transportation = [truck, ship]
 
 for trans in transportation:
-    trans.create()
+    print(trans.get().name)
